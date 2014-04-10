@@ -17,9 +17,12 @@ class Translator:
         else:
             convert=True
             l = len(s_arr)
-            for no in range(1, 11):
-                if l%no==0:
-                    r=int(round(no/2))
+            if l >= 4 and l <= 10:
+                r=2
+            else:
+                for no in range(1, 11):
+                    if l%no==0:
+                        r=int(no/2)
         if convert:
             n_arr.append(s_arr[r:])
             n_arr.append(s_arr[:r])
